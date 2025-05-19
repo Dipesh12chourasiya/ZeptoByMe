@@ -1,7 +1,9 @@
 package com.example.zeptobyme;
 
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private String name;
     private int imageResId;
     private String price;

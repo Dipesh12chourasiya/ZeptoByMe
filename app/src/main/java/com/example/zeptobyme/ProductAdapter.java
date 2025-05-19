@@ -1,6 +1,7 @@
 package com.example.zeptobyme;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,6 +77,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             holder.cartContainer.setVisibility(View.VISIBLE);
         });
 
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(mContext, ProductDetails.class);
+            intent.putExtra("product", mProductList.get(position));
+            mContext.startActivity(intent);
+        });
 
     }
 
