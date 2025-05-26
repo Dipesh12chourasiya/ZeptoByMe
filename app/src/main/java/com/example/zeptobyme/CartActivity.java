@@ -33,12 +33,15 @@ public class CartActivity extends AppCompatActivity {
         tvTotalPrice = findViewById(R.id.total_price);
         btnCheckout = findViewById(R.id.btn_checkout);
 
+        CartManager.getInstance().loadCartFromPreferences(this); // getting cart items from sharedprefrenses
+
         cartItems = CartManager.getInstance().getCartItems();
         cartAdapter = new CartAdapter(this, cartItems);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(cartAdapter);
 
         int totalAmount = calculateTotal(); // Calculate total once and store it
+
 
         btnCheckout.setOnClickListener(v -> {
             if (cartItems.isEmpty()) {

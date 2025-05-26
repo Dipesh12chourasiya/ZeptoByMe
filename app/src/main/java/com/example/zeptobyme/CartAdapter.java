@@ -45,6 +45,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             cartItems.remove(position);
             notifyItemRemoved(position);
             notifyItemRangeChanged(position, cartItems.size());
+
+            // Save updated cart to SharedPreferences
+            cartManager.saveCartToPreferences(context);
         });
     }
 
@@ -67,6 +70,4 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             btnRemove= itemView.findViewById(R.id.remove_from_cart);
         }
     }
-
-
 }

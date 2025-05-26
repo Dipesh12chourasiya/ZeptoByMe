@@ -63,15 +63,23 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                 count--;
                 holder.tvItemCount.setText(String.valueOf(count));
             } else {
-
+                // Remove from cart or hide UI
                 holder.cartContainer.setVisibility(View.GONE);
                 holder.btnAddToCart.setVisibility(View.VISIBLE);
+
+                CartManager.getInstance().removeFromCart(product);
             }
+
+            CartManager.getInstance().saveCartToPreferences(mContext); // Save any change
         });
+
 
         holder.btnAddToCart.setOnClickListener(v -> {
 
             CartManager.getInstance().addToCart(product);
+
+            // Save updated cart to SharedPreferences
+            CartManager.getInstance().saveCartToPreferences(mContext);
 
             holder.btnAddToCart.setVisibility(View.GONE);
             holder.cartContainer.setVisibility(View.VISIBLE);

@@ -48,4 +48,6 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
 
     implementation("com.google.firebase:firebase-messaging:24.1.1")
+
+    implementation("com.google.code.gson:gson:2.10.1")
 }

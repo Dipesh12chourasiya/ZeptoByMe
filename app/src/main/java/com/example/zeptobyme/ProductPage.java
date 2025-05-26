@@ -48,17 +48,17 @@ public class ProductPage extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
 
         productList = new ArrayList<>();
-        productList.add(new Product("Fortune Sunflower", R.drawable.fortune, "₹156", "MRP ₹190", "1 l"));
-        productList.add(new Product("Amul taaza Milk(Pouch)", R.drawable.amul_milk, "₹28", "MRP ₹30", "500ml"));
-        productList.add(new Product("Onion", R.drawable.onion, "₹83", "MRP ₹111", "1 kg"));
-        productList.add(new Product("Coconut", R.drawable.coconut, "₹89", "MRP ₹119", "1 "));
-        productList.add(new Product("Amul Butter", R.drawable.amul_butter, "₹60", "MRP ₹90", "50 gm"));
-        productList.add(new Product("Coriander", R.drawable.corianderc, "₹18", "MRP ₹24", "1 "));
-        productList.add(new Product("Coriander", R.drawable.corianderc, "₹18", "MRP ₹24", "1 "));
-        productList.add(new Product("Coriander", R.drawable.corianderc, "₹18", "MRP ₹24", "1 "));
-        productList.add(new Product("Coriander", R.drawable.corianderc, "₹18", "MRP ₹24", "1 "));
-        productList.add(new Product("Coriander", R.drawable.corianderc, "₹18", "MRP ₹24", "1 "));
-        productList.add(new Product("Coriander", R.drawable.corianderc, "₹18", "MRP ₹24", "1 "));
+        productList.add(new Product("Fortune Sunflower", R.drawable.fortune, "₹156", "MRP ₹190", "1 l","This Sunflower old is good"));
+        productList.add(new Product("Amul taaza Milk(Pouch)", R.drawable.amul_milk, "₹28", "MRP ₹30", "500ml", "GOOD product"));
+        productList.add(new Product("Onion", R.drawable.onion, "₹83", "MRP ₹111", "1 kg", "dd"));
+        productList.add(new Product("Coconut", R.drawable.coconut, "₹89", "MRP ₹119", "1 ","dd"));
+        productList.add(new Product("Amul Butter", R.drawable.amul_butter, "₹60", "MRP ₹90", "50 gm","dd"));
+        productList.add(new Product("Coriander", R.drawable.corianderc, "₹18", "MRP ₹24", "1 ","dd"));
+        productList.add(new Product("Coriander", R.drawable.corianderc, "₹18", "MRP ₹24", "1 ","dd"));
+        productList.add(new Product("Coriander", R.drawable.corianderc, "₹18", "MRP ₹24", "1 ","dd"));
+        productList.add(new Product("Coriander", R.drawable.corianderc, "₹18", "MRP ₹24", "1 ","dd"));
+        productList.add(new Product("Coriander", R.drawable.corianderc, "₹18", "MRP ₹24", "1 ","dd"));
+        productList.add(new Product("Coriander", R.drawable.corianderc, "₹18", "MRP ₹24", "1 ","dd"));
 
 
         filteredList = new ArrayList<>(productList);
