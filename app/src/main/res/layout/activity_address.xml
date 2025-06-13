@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:padding="16dp"
+    android:backgroundTint="@color/appBackground">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Address"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/white"
+        android:gravity="center" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Enter your address"
+        app:hintTextColor="@color/black"
+        app:boxStrokeColor="@color/pink"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="3"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColorHint="@color/black"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:padding="12dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSaveAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Address"
+        android:layout_marginTop="24dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        app:cornerRadius="8dp"
+        android:backgroundTint="@color/pink"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        style="@style/Widget.MaterialComponents.Button"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDeleteAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Address"
+        android:layout_marginTop="12dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        app:cornerRadius="8dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="@color/pink"
+        android:textColor="@color/pink"
+        android:textSize="18sp"
+        />
+
+</LinearLayout>

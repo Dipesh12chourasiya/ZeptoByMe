@@ -1,6 +1,9 @@
 package com.example.zeptobyme;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 
 import androidx.activity.EdgeToEdge;
@@ -44,5 +47,29 @@ public class SettingsActivity extends AppCompatActivity {
                     isChecked ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO
             );
         });
+
+      // this Will let us navigate to Address fragmnet
+        LinearLayout llAddress = findViewById(R.id.llAddress);
+        llAddress.setOnClickListener(v -> {
+            Intent intent = new Intent(this, AddressActivity.class);
+            startActivity(intent);
+        });
+
+
+        LinearLayout llOrders = findViewById(R.id.llOrders);
+
+        llOrders.setOnClickListener(v ->{
+            Intent intent = new Intent(this, MyOrdersActivity.class);
+            startActivity(intent);
+        });
+
+//        llOrders.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(SettingsActivity.this, MyOrdersActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
     }
 }
