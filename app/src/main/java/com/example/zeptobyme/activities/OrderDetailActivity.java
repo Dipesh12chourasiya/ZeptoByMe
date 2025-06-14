@@ -1,16 +1,18 @@
-package com.example.zeptobyme;
+package com.example.zeptobyme.activities;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.zeptobyme.models.Order;
+import com.example.zeptobyme.models.Product;
+import com.example.zeptobyme.R;
+import com.example.zeptobyme.adapters.ProductAdapter;
 
 public class OrderDetailActivity extends AppCompatActivity {
 
@@ -60,7 +62,8 @@ public class OrderDetailActivity extends AppCompatActivity {
         tvTrackingStatus.setText("Status: " + order.getStatus());
 
         // Setup RecyclerView
-        rvOrderItems.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        rvOrderItems.setLayoutManager(layoutManager);
         rvOrderItems.setAdapter(new ProductAdapter(this ,order.getProductList()));
     }
 }

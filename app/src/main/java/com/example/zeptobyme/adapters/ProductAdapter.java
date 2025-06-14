@@ -1,4 +1,4 @@
-package com.example.zeptobyme;
+package com.example.zeptobyme.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.zeptobyme.CartManager;
+import com.example.zeptobyme.models.Product;
+import com.example.zeptobyme.activities.ProductDetails;
+import com.example.zeptobyme.R;
 
 import java.util.List;
 

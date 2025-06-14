@@ -1,10 +1,8 @@
-package com.example.zeptobyme;
+package com.example.zeptobyme.models;
 
 
 import java.io.Serializable;
 import java.util.List;
-
-import kotlin.jvm.internal.SerializedIr;
 
 
 public class Order implements Serializable {

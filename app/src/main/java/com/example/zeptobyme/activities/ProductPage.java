@@ -1,4 +1,4 @@
-package com.example.zeptobyme;
+package com.example.zeptobyme.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,15 +10,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.zeptobyme.R;
+import com.example.zeptobyme.adapters.ProductAdapter;
+import com.example.zeptobyme.models.Product;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -45,8 +44,15 @@ public class ProductPage extends AppCompatActivity {
         searchBar = findViewById(R.id.search_bar);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
+//        Displays the product list in a 3-column grid layout.
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
 
+
+//        Hardcoded products are added to productList. Each product has:
+//        Name (like "Onion")
+//        Image (like R.drawable.onion)
+//        Price, MRP, quantity
+//        Description
         productList = new ArrayList<>();
         productList.add(new Product("Fortune Sunflower", R.drawable.fortune, "₹156", "MRP ₹190", "1 l","This Sunflower old is good"));
         productList.add(new Product("Amul taaza Milk(Pouch)", R.drawable.amul_milk, "₹28", "MRP ₹30", "500ml", "GOOD product"));
@@ -61,10 +67,16 @@ public class ProductPage extends AppCompatActivity {
         productList.add(new Product("Coriander", R.drawable.corianderc, "₹18", "MRP ₹24", "1 ","dd"));
 
 
+//        filteredList is the one actually shown to users.
+//        ProductAdapter handles how each item is shown in the grid.
         filteredList = new ArrayList<>(productList);
         productAdapter = new ProductAdapter(this, filteredList);
         recyclerView.setAdapter(productAdapter);
 
+
+//        Adds a listener to detect user typing.
+//
+//        Calls filterProducts(query) every time user types.
         searchBar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -114,6 +126,8 @@ public class ProductPage extends AppCompatActivity {
 
 
 
+//    Filters only those products whose name contains the search query.
+//    Refreshes the RecyclerView.
     private void filterProducts(String query) {
         filteredList.clear();
         if (query.isEmpty()) {

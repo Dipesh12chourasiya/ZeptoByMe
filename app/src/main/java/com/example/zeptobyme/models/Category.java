@@ -1,4 +1,4 @@
-package com.example.zeptobyme;
+package com.example.zeptobyme.models;
 
 public class Category {
 

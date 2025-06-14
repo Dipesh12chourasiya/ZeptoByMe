@@ -1,4 +1,4 @@
-package com.example.zeptobyme;
+package com.example.zeptobyme.models;
 
 
 import java.io.Serializable;

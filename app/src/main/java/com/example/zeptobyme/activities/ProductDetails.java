@@ -1,4 +1,4 @@
-package com.example.zeptobyme;
+package com.example.zeptobyme.activities;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -8,7 +8,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
+import com.example.zeptobyme.CartManager;
+import com.example.zeptobyme.R;
+import com.example.zeptobyme.models.Product;
 
 
 public class ProductDetails extends AppCompatActivity {

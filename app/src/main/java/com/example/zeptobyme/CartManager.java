@@ -3,6 +3,7 @@ package com.example.zeptobyme;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.zeptobyme.models.Product;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 

@@ -1,14 +1,15 @@
-package com.example.zeptobyme;
+package com.example.zeptobyme.activities;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.zeptobyme.models.Order;
+import com.example.zeptobyme.OrderManager;
+import com.example.zeptobyme.R;
+import com.example.zeptobyme.adapters.OrderAdapter;
 
 import java.util.List;
 
@@ -28,6 +29,8 @@ public class MyOrdersActivity extends AppCompatActivity {
 
         orderList = OrderManager.loadOrders(this); // Loads from SharedPreferences
         orderAdapter = new OrderAdapter(this, orderList);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true);
+        rvOrders.setLayoutManager(layoutManager);
         rvOrders.setAdapter(orderAdapter);
     }
 }

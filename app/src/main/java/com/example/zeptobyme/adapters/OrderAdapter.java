@@ -1,4 +1,4 @@
-package com.example.zeptobyme;
+package com.example.zeptobyme.adapters;
 
 import android.content.Context;
 
@@ -14,6 +14,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.zeptobyme.models.Order;
+import com.example.zeptobyme.activities.OrderDetailActivity;
+import com.example.zeptobyme.R;
 
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {

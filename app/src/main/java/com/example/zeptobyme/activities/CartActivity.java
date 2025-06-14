@@ -1,4 +1,4 @@
-package com.example.zeptobyme;
+package com.example.zeptobyme.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,13 +6,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.zeptobyme.CartManager;
+import com.example.zeptobyme.models.Product;
+import com.example.zeptobyme.R;
+import com.example.zeptobyme.adapters.CartAdapter;
 
 import java.util.List;
 

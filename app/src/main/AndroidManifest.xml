@@ -17,16 +17,16 @@
         android:theme="@style/Theme.ZeptoByMe"
         tools:targetApi="31">
         <activity
-            android:name=".OrderDetailActivity"
+            android:name=".activities.OrderDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".MyOrdersActivity"
+            android:name=".activities.MyOrdersActivity"
             android:exported="false" />
         <activity
-            android:name=".AddressActivity"
+            android:name=".activities.AddressActivity"
             android:exported="false" />
         <activity
-            android:name=".ProductDetails"
+            android:name=".activities.ProductDetails"
             android:exported="false" />
 
         <service
@@ -38,22 +38,22 @@
         </service>
 
         <activity
-            android:name=".PaymentActivity"
+            android:name=".activities.PaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".activities.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".CartActivity"
+            android:name=".activities.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".Apparel"
+            android:name=".activities.Apparel"
             android:exported="false" />
         <activity
-            android:name=".CategoryActivity"
+            android:name=".activities.CategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".ProductPage"
+            android:name=".activities.ProductPage"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

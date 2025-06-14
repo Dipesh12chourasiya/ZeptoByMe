@@ -1,26 +1,29 @@
-package com.example.zeptobyme;
+package com.example.zeptobyme.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.example.zeptobyme.R;
 
-
+//This screen is Settings page in  app. It allows the user to:
+//        Toggle between Light & Dark Mode (using a switch)
+// Navigate to their Saved Addresses
+// Navigate to their Past Orders
 public class SettingsActivity extends AppCompatActivity {
     private Switch themeToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
+//        Before loading the UI, the app checks the saved preference from SharedPreferences:
+//        If dark_mode = true, it applies dark theme.
+//                Else, it applies light theme.
         // i have set theme based on saved preference before super.onCreate
         if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("dark_mode", false)) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -37,6 +40,9 @@ public class SettingsActivity extends AppCompatActivity {
         boolean isDark = getSharedPreferences("settings", MODE_PRIVATE).getBoolean("dark_mode", false);
         themeToggle.setChecked(isDark);
 
+//        When the switch is toggled:
+//        Saves the new preference.
+//                Changes the app’s theme immediately (no restart needed).
         themeToggle.setOnCheckedChangeListener((buttonView, isChecked) -> {
             getSharedPreferences("settings", MODE_PRIVATE)
                     .edit()

@@ -1,4 +1,4 @@
-package com.example.zeptobyme;
+package com.example.zeptobyme.activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,11 +8,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.example.zeptobyme.CartManager;
+import com.example.zeptobyme.models.Order;
+import com.example.zeptobyme.OrderManager;
+import com.example.zeptobyme.models.Product;
+import com.example.zeptobyme.R;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -42,6 +45,10 @@ public class PaymentActivity extends AppCompatActivity {
 
         totalAmount = getIntent().getIntExtra("TOTAL_AMOUNT", 0);
         tvTotalAmount.setText("Total Amount: ₹" + totalAmount);
+
+//        The amount is passed from a previous screen via Intent.
+//
+//        It's displayed on the screen using a TextView.
     }
 
     public void payWithGPay(View view) {
@@ -93,5 +100,12 @@ public class PaymentActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Order placed successfully!", Toast.LENGTH_SHORT).show();
     }
+//            🛒 Gets items from the cart.
+//🆔 Generates a unique order ID using UUID.
+//📅 Sets today’s date.
+//            🗃️ Adds the order to existing orders (loaded from OrderManager).
+//            💾 Saves all orders.
+//🧹 Clears the cart.
+//✅ Shows success message.
 
 }
